@@ -1,13 +1,13 @@
 //
-//  BaseView.swift
+//  TransactionView.swift
 //  ExpanceUI
 //
-//  Created by Oyatullo Koraboev on 28/12/22.
+//  Created by Oyatullo Koraboev on 07/01/23.
 //
 
 import UIKit
 
-class BaseView: UIView {
+class TransactionView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

@@ -45,7 +45,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         myTableView.delegate = self
         myTableView.dataSource = self
         myTableView.showsVerticalScrollIndicator = false
-        
+        myTableView.backgroundColor = Resources.colors.background
         myTableView.separatorStyle = .none
         myTableView.register(TransactionCellTableViewCell.self, forCellReuseIdentifier: "cell")
         myTableView.snp.makeConstraints { make in

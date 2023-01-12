@@ -9,14 +9,22 @@ import Foundation
 import UIKit
 enum Resources{
     enum images{
-        static let upIcon = UIImage(named: "up")
-        static let downIcon = UIImage(named: "down")
+        static let upIcon = UIImage(named: "up") ?? UIImage()
+        static let downIcon = UIImage(named: "down") ?? UIImage()
+        static let bulp = UIImage(named: "bulp") ?? UIImage()
+        static let chevron = UIImage(named: "chevron") ?? UIImage()
+        static let threedots = UIImage(named: "threeDots") ?? UIImage()
+        
+        static let tv = UIImage(named: "tv") ?? UIImage()
+        
     }
     
     enum colors{
         static var inactive = UIColor(hexString: "#828282")
         static var active = UIColor(hexString: "#333333")
         static var background = UIColor(hexString: "#E5E5E5")
+        static var transactionUp = UIColor(hexString: "#6FCF97")
+        static var transactionCard = UIColor(hexString: "#F9F9F9")
     }
 
     enum fonts{

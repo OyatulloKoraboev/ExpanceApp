@@ -8,27 +8,40 @@
 import UIKit
 import SnapKit
 class NavigationView: BaseView {
-    private let chevronButton = IconButtonView(image: Resources.images.chevron)
-    private let threeDotsButton = IconButtonView(image: Resources.images.threedots)
-    private let bulpButton = IconButtonView(image: Resources.images.bulp)
+    private let firstItem = UIImageView()
+    private let secondItem = UIImageView()
+    private let thirdItem = UIImageView()
     
     private var navTitle: UILabel = {
         let label = UILabel()
-        label.text = "Dashboard".capitalized
+//        label.text = "Dashboard".capitalized
         label.font = Resources.fonts.interBold(size: 20)
         return label
     }()
     
-
+    init(title:String,firstItem:UIImage,secondItem:UIImage,thirdItem:UIImage) {
+        super.init(frame: .zero)
+        navTitle.text = title
+        self.firstItem.image = firstItem
+        self.secondItem.image = secondItem
+        self.thirdItem.image = thirdItem
+        
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
 
 extension NavigationView {
     override func addViews() {
         super.addViews()
         addSubview(navTitle)
-        addSubview(chevronButton)
-        addSubview(bulpButton)
-        addSubview(threeDotsButton)
+        addSubview(firstItem)
+        addSubview(thirdItem)
+        addSubview(secondItem)
     }
     
     override func layoutViews() {
@@ -37,17 +50,16 @@ extension NavigationView {
             make.left.equalTo(35)
             make.bottom.equalTo(-15)
         }
-        chevronButton.snp.makeConstraints { make in
+        firstItem.snp.makeConstraints { make in
             make.left.equalTo(navTitle.snp.right).offset(20)
-            make.height.width.equalTo(25)
             make.centerY.equalTo(navTitle.snp.centerY)
         }
-        bulpButton.snp.makeConstraints { make in
-            make.centerY.equalTo(chevronButton)
-            make.right.equalTo(threeDotsButton.snp.left).offset(-40)
+        thirdItem.snp.makeConstraints { make in
+            make.centerY.equalTo(firstItem)
+            make.right.equalTo(secondItem.snp.left).offset(-40)
         }
-        threeDotsButton.snp.makeConstraints { make in
-            make.centerY.equalTo(chevronButton)
+        secondItem.snp.makeConstraints { make in
+            make.centerY.equalTo(firstItem)
             make.right.equalToSuperview().offset(-41)
         }
     }

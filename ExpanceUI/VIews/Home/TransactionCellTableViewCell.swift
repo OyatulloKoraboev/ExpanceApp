@@ -1,42 +1,39 @@
 //
-//  TransactionView.swift
+//  TransactionCellTableViewCell.swift
 //  ExpanceUI
 //
-//  Created by Oyatullo Koraboev on 07/01/23.
+//  Created by Oyatullo Koraboev on 12/01/23.
 //
 
 import UIKit
 
-class TransactionView: BaseView {
-    let stackView =  UIStackView()
-    let firstHzStackView = UIStackView()
-    let secondHzStackView = UIStackView()
-    let imageBack = UIView()
+class TransactionCellTableViewCell: UITableViewCell {
+    private let stackView =  UIStackView()
+    private let firstHzStackView = UIStackView()
+    private let secondHzStackView = UIStackView()
+    private let mainView = UIView()
+    private let iconBack = UIView()
+    
     let iconView:UIImageView = {
         let image = UIImageView()
-        image.image = Resources.images.tv
         
         return image
     }()
     
-    
     let titleLabel:UILabel = {
         let label = UILabel()
-        label.text = "Cashback Offer"
         label.font = Resources.fonts.interBold(size: 16)
         return label
         
     }()
     let typeLabel:UILabel = {
         let label = UILabel()
-        label.text = "Entertainment"
         label.font = Resources.fonts.interLight(size: 12)
         return label
         
     }()
     let cashbackLabel:UILabel = {
         let label = UILabel()
-        label.text = "+$30"
         label.textColor = Resources.colors.transactionUp
         label.font = Resources.fonts.interBold(size: 16)
         return label
@@ -44,46 +41,38 @@ class TransactionView: BaseView {
     }()
     let dateLabel:UILabel = {
         let label = UILabel()
-        label.text = "Oct 30, 2021"
         label.font = Resources.fonts.interLight(size: 10)
         return label
         
     }()
     
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubview(mainView)
+        mainView.addSubview(iconBack)
+        selectionStyle = .none 
         
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-}
-
-extension TransactionView {
-    override func addViews() {
-        super.addViews()
-        addSubview(imageBack)
-        addSubview(iconView)
+        iconBack.addSubview(iconView)
+        iconBack.snp.makeConstraints { make in
+            make.height.width.equalTo(75)
+            make.left.equalToSuperview().offset(12)
+            make.centerY.equalToSuperview()
+        }
         
-        addSubview(firstHzStackView)
+        mainView.addSubview(firstHzStackView)
+        
         firstHzStackView.addArrangedSubview(titleLabel)
         firstHzStackView.addArrangedSubview(cashbackLabel)
-        addSubview(secondHzStackView)
+        
+        mainView.addSubview(secondHzStackView)
+        
         secondHzStackView.addArrangedSubview(typeLabel)
         secondHzStackView.addArrangedSubview(dateLabel)
         
-//        stackView.addArrangedSubview(titleLabel)
-//        stackView.addArrangedSubview(subTitleLabel)
-//        stackView.addArrangedSubview(cashbackLabel)
-//        stackView.addArrangedSubview(dateLabel)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
+        mainView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 6, left: 0, bottom: 6, right: 0))
+        }
+        
         firstHzStackView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(100)
             make.right.equalToSuperview().offset(-20)
@@ -97,24 +86,25 @@ extension TransactionView {
             make.height.equalTo(typeLabel.snp.height)
         }
         
-        imageBack.snp.makeConstraints { make in
-            make.left.top.equalToSuperview().offset(12)
-            make.width.height.equalTo(75)
+        iconView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
         
-        iconView.snp.makeConstraints { make in
-            make.left.equalTo(imageBack.snp.left).offset(27)
-            make.top.equalTo(imageBack.snp.top).offset(27)
-        }
+        backgroundColor = .white
+        mainView.backgroundColor = .white
+        mainView.layer.cornerRadius = 5
+        iconBack.backgroundColor = Resources.colors.background
+        iconBack.layer.cornerRadius = 5
+        
     }
     
-    override func configureViews() {
-        super.configureViews()
-        backgroundColor = .white
-        imageBack.backgroundColor = Resources.colors.transactionCard
-        imageBack.layer.cornerRadius = 5
-        layer.cornerRadius = 10
-        
-        
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
+    
 }
+
+
+ 

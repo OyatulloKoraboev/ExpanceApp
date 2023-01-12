@@ -8,11 +8,13 @@
 import UIKit
 import SnapKit
 class DetailViewController: UIViewController {
+    var transactions:[Transaction] = []
+    
     private let dismisButton:UIButton = {
         let button = UIButton()
         button.setTitle("Dismiss", for: .normal)
         button.backgroundColor = .systemGreen
-        button.addTarget(self, action: #selector(backButton), for: .touchUpInside)
+        button.addTarget(DetailViewController.self, action: #selector(backButton), for: .touchUpInside)
         return button
     }()
     override func viewDidLoad() {

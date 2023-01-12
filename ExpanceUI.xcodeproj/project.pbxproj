@@ -32,11 +32,10 @@
 		4B0E1036295DA08A00D3BEBC /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0E1035295DA08A00D3BEBC /* NavigationView.swift */; };
 		4B71B06E2969978F00FDD036 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B71B06D2969978F00FDD036 /* UIView + ext.swift */; };
 		4B71B07029699B5B00FDD036 /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B71B06F29699B5B00FDD036 /* IconButtonView.swift */; };
-		4B71B07529699FC800FDD036 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B71B07429699FC800FDD036 /* TransactionView.swift */; };
-		4B71B0772969E3CD00FDD036 /* IncomesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B71B0762969E3CD00FDD036 /* IncomesViewController.swift */; };
 		4BAA1A4D297049790094F412 /* Transaction Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A4C297049790094F412 /* Transaction Model.swift */; };
 		4BAA1A4F29704F540094F412 /* TransactionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A4E29704F540094F412 /* TransactionCellTableViewCell.swift */; };
 		4BAA1A5129705B2F0094F412 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A5029705B2F0094F412 /* DetailViewController.swift */; };
+		4BAA1A542970672F0094F412 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A532970672F0094F412 /* DetailTableViewCell.swift */; };
 		FA7891A603620D3371E67611 /* Pods_ExpanceUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109E97701CD316D4C2C005D5 /* Pods_ExpanceUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,11 +68,10 @@
 		4B0E1035295DA08A00D3BEBC /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		4B71B06D2969978F00FDD036 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		4B71B06F29699B5B00FDD036 /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
-		4B71B07429699FC800FDD036 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
-		4B71B0762969E3CD00FDD036 /* IncomesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomesViewController.swift; sourceTree = "<group>"; };
 		4BAA1A4C297049790094F412 /* Transaction Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction Model.swift"; sourceTree = "<group>"; };
 		4BAA1A4E29704F540094F412 /* TransactionCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellTableViewCell.swift; sourceTree = "<group>"; };
 		4BAA1A5029705B2F0094F412 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4BAA1A532970672F0094F412 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		4E993CCAFAFAF86A69535C62 /* Pods-ExpanceUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpanceUI.debug.xcconfig"; path = "Target Support Files/Pods-ExpanceUI/Pods-ExpanceUI.debug.xcconfig"; sourceTree = "<group>"; };
 		C2A16A7571B03783DAB963EE /* Pods-ExpanceUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpanceUI.release.xcconfig"; path = "Target Support Files/Pods-ExpanceUI/Pods-ExpanceUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				4B0E0FBB295C504B00D3BEBC /* HomeViewController.swift */,
-				4B71B0762969E3CD00FDD036 /* IncomesViewController.swift */,
 				4BAA1A5029705B2F0094F412 /* DetailViewController.swift */,
 			);
 			path = Controller;
@@ -213,17 +210,14 @@
 			path = static;
 			sourceTree = "<group>";
 		};
-		4B0E1032295DA02F00D3BEBC /* Home */ = {
+		4B0E1032295DA02F00D3BEBC /* HomeVIew */ = {
 			isa = PBXGroup;
 			children = (
 				4B71B07329699F5600FDD036 /* Components */,
 				4B0E1030295CB9D000D3BEBC /* SubCardView.swift */,
 				4B0E0FD0295C636F00D3BEBC /* CardView.swift */,
-				4B0E1035295DA08A00D3BEBC /* NavigationView.swift */,
-				4B71B07429699FC800FDD036 /* TransactionView.swift */,
-				4BAA1A4E29704F540094F412 /* TransactionCellTableViewCell.swift */,
 			);
-			path = Home;
+			path = HomeVIew;
 			sourceTree = "<group>";
 		};
 		4B0E1034295DA04900D3BEBC /* BaseView */ = {
@@ -237,8 +231,10 @@
 		4B71B07129699E7600FDD036 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
+				4B0E1035295DA08A00D3BEBC /* NavigationView.swift */,
+				4BAA1A52297067000094F412 /* DetailedView */,
 				4B0E1034295DA04900D3BEBC /* BaseView */,
-				4B0E1032295DA02F00D3BEBC /* Home */,
+				4B0E1032295DA02F00D3BEBC /* HomeVIew */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -246,6 +242,7 @@
 		4B71B07329699F5600FDD036 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				4BAA1A4E29704F540094F412 /* TransactionCellTableViewCell.swift */,
 				4B71B06F29699B5B00FDD036 /* IconButtonView.swift */,
 			);
 			path = Components;
@@ -257,6 +254,14 @@
 				4BAA1A4C297049790094F412 /* Transaction Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4BAA1A52297067000094F412 /* DetailedView */ = {
+			isa = PBXGroup;
+			children = (
+				4BAA1A532970672F0094F412 /* DetailTableViewCell.swift */,
+			);
+			path = DetailedView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,14 +391,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BAA1A4F29704F540094F412 /* TransactionCellTableViewCell.swift in Sources */,
-				4B71B0772969E3CD00FDD036 /* IncomesViewController.swift in Sources */,
 				4B0E0FBC295C504B00D3BEBC /* HomeViewController.swift in Sources */,
 				4B0E1036295DA08A00D3BEBC /* NavigationView.swift in Sources */,
+				4BAA1A542970672F0094F412 /* DetailTableViewCell.swift in Sources */,
 				4B0E0FCF295C631B00D3BEBC /* Resources.swift in Sources */,
 				4B71B07029699B5B00FDD036 /* IconButtonView.swift in Sources */,
 				4B0E0FD7295C783500D3BEBC /* UIColor + ext.swift in Sources */,
 				4BAA1A5129705B2F0094F412 /* DetailViewController.swift in Sources */,
-				4B71B07529699FC800FDD036 /* TransactionView.swift in Sources */,
 				4BAA1A4D297049790094F412 /* Transaction Model.swift in Sources */,
 				4B0E1031295CB9D000D3BEBC /* SubCardView.swift in Sources */,
 				4B0E0FD1295C636F00D3BEBC /* CardView.swift in Sources */,

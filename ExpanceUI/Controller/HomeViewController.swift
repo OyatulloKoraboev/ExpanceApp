@@ -11,12 +11,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     let transactions = [
-        Transaction(title: "Cashback Offer", cashback: "+$30", type: "Entertaiment", date: "30/10/22", icon: "tv"),
-        Transaction(title: "Chessy Pizza", cashback: "-$30", type: "Transportation", date: "30/10/22", icon: "egg"),
-        Transaction(title: "Freelancing", cashback: "+$150", type: "Transportaion", date: "30/10/22", icon: "eight"),
+        Transaction(title: "Cashback Offer", cashback: "+$30", type: "Entertaiment", date: "30/10/22", icon: "tv",transactionType: .income),
+        Transaction(title: "Chessy Pizza", cashback: "-$30", type: "Transportation", date: "30/10/22", icon: "egg",transactionType: .outcome),
+        Transaction(title: "Freelancing", cashback: "+$150", type: "Transportaion", date: "30/10/22", icon: "eight",transactionType: .income),
         Transaction(title: "Metro Railway", cashback: "-$230", type: "Transportaion", date: "30/10/22",
-            icon: "icon"),
-        
+                    icon: "icon",transactionType: .outcome),
     ]
     let cardView = CardView(title: "total balance", cost: "$23,000",titleOffsetTop: 34,costOffsetTop: 16)
     let leftSubCard = SubCardView(title: "Total income", cost: "+$23,000", titleOffsetTop: 53, costOffsetTop: 12,iconView: Resources.images.downIcon)
@@ -25,17 +24,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let navigationView = NavigationView(title: "Dashboard", firstItem: Resources.images.chevron, secondItem: Resources.images.threedots, thirdItem: Resources.images.bulp)
     let myTableView = UITableView()
+    let button = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         configureTable()
+        
+        button.frame = CGRect(origin: CGPoint(x: 322,y: 736),size: CGSize(width:52, height: 52))
+        button.backgroundColor = Resources.colors.commonButton
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.clipsToBounds = true
+        button.setImage(Resources.images.plus, for: .normal)
+        button.makeSystem(button: button)
+        view.addSubview(button)
     }
     
     private func configureTable(){
         view.addSubview(myTableView)
         myTableView.delegate = self
         myTableView.dataSource = self
+        myTableView.showsVerticalScrollIndicator = false
         
         myTableView.separatorStyle = .none
         myTableView.register(TransactionCellTableViewCell.self, forCellReuseIdentifier: "cell")
@@ -57,6 +66,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.backgroundColor = Resources.colors.background
         cell.titleLabel.text = transactions[indexPath.row].title
         cell.cashbackLabel.text = transactions[indexPath.row].cashback
+        cell.cashbackLabel.textColor = transactions[indexPath.row].transactionType == .income ? Resources.colors.up : Resources.colors.down
         cell.typeLabel.text = transactions[indexPath.row].type
         cell.dateLabel.text = transactions[indexPath.row].date
         cell.iconView.image = transactions[indexPath.row].icon
@@ -84,7 +94,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         recentLabel.text = "recent transactions".capitalized
         recentLabel.font = Resources.fonts.interBold(size: 16)
         view.addSubview(recentLabel)
-
+        
         navigationView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.equalToSuperview()
@@ -115,9 +125,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             make.top.equalTo(rightSubCard.snp.bottom).offset(25)
             make.left.equalToSuperview().offset(20)
         }
-        
-        
-        
     }
 }
 

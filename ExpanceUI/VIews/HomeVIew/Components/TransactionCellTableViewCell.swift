@@ -34,7 +34,7 @@ class TransactionCellTableViewCell: UITableViewCell {
     }()
     let cashbackLabel:UILabel = {
         let label = UILabel()
-        label.textColor = Resources.colors.transactionUp
+        label.textColor = Resources.colors.up
         label.font = Resources.fonts.interBold(size: 16)
         return label
         

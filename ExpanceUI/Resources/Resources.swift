@@ -16,6 +16,7 @@ enum Resources{
         static let threedots = UIImage(named: "threeDots") ?? UIImage()
         
         static let tv = UIImage(named: "tv") ?? UIImage()
+        static let plus = UIImage(named: "plus") ?? UIImage()
         
     }
     
@@ -23,8 +24,11 @@ enum Resources{
         static var inactive = UIColor(hexString: "#828282")
         static var active = UIColor(hexString: "#333333")
         static var background = UIColor(hexString: "#E5E5E5")
-        static var transactionUp = UIColor(hexString: "#6FCF97")
+        static var up = UIColor(hexString: "#6FCF97")
+        static var down = UIColor(hexString: "#EB5757")
         static var transactionCard = UIColor(hexString: "#F9F9F9")
+        static var commonButton = UIColor(hexString: "#006AF6")
+        
     }
 
     enum fonts{

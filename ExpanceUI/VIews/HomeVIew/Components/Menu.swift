@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class Menu: BaseView {
     let firstItem = UIButton()
@@ -53,10 +54,12 @@ extension Menu {
         
         firstItem.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(30)
+            
         }
         
         secondItem.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(30)
+            
             
         }
 
@@ -67,6 +70,8 @@ extension Menu {
         stackview.axis = .vertical
         firstItem.contentHorizontalAlignment = .left
         secondItem.contentHorizontalAlignment = .left
+        firstItem.contentVerticalAlignment = .center
+        
         firstItem.titleLabel?.font = Resources.fonts.interSemiBold(size: 16)
         secondItem.titleLabel?.font = Resources.fonts.interSemiBold(size: 16)
         self.layer.shadowRadius = 5

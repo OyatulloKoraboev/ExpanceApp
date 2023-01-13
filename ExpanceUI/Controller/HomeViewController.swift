@@ -23,7 +23,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let navigationView = NavigationView(title: "Dashboard", firstItem: Resources.images.chevron, secondItem: Resources.images.threedots, thirdItem: Resources.images.bulp)
     let myTableView = UITableView()
-    let button = UIButton()
+    let plusButton = UIButton()
     let chenronView = Menu(firstTitle: "Incomes", secondTitle: "Expances")
     
     
@@ -32,18 +32,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         configure()
         configureTable()
         
-        button.frame = CGRect(origin: CGPoint(x: 322,y: 736),size: CGSize(width:52, height: 52))
-        button.backgroundColor = Resources.colors.commonButton
-        button.layer.cornerRadius = 0.5 * button.bounds.size.width
-        button.clipsToBounds = true
-        button.setImage(Resources.images.plus, for: .normal)
+        plusButton.frame = CGRect(origin: CGPoint(x: 322,y: 736),size: CGSize(width:52, height: 52))
+        plusButton.backgroundColor = Resources.colors.commonButton
+        plusButton.layer.cornerRadius = 0.5 * plusButton.bounds.size.width
+        plusButton.clipsToBounds = true
+        plusButton.setImage(Resources.images.plus, for: .normal)
         
-        view.addSubview(button)
+        view.addSubview(plusButton)
         navigationView.firstItem.makeSystem(button: navigationView.firstItem)
         navigationView.firstItem.addTarget(self, action: #selector(cheronPressed), for: .touchUpInside)
         chenronView.firstItem.makeSystem(button: chenronView.firstItem)
         chenronView.secondItem.makeSystem(button: chenronView.secondItem)
         chenronView.firstItem.addTarget(self, action: #selector(goToIncome), for: .touchUpInside)
+        chenronView.secondItem.addTarget(self, action: #selector(goToExpance), for: .touchUpInside)
+        plusButton.addTarget(self, action: #selector(addExpance), for: .touchUpInside)
+    }
+    
+    
+    @objc func addExpance(){
+        let vc = AddExpance()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        
     }
     
     @objc func goToIncome(){
@@ -52,6 +62,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         present(vc, animated: true)
         
     }
+    
+    @objc func goToExpance(){
+        let vc = ExpanceViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        
+    }
+    
     
     @objc func cheronPressed(){
         if chenronView.isHidden {

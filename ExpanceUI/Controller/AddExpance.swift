@@ -1,5 +1,5 @@
 //
-//  ExpanceViewController.swift
+//  ViewController.swift
 //  ExpanceUI
 //
 //  Created by Oyatullo Koraboev on 14/01/23.
@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ExpanceViewController: UIViewController {
-
+class AddExpance: UIViewController {
     let button = UIButton()
     
     override func viewDidLoad() {
@@ -20,7 +19,7 @@ class ExpanceViewController: UIViewController {
         button.snp.makeConstraints { make in
             make.centerY.centerX.equalToSuperview()
         }
-        view.backgroundColor = .systemCyan
+        view.backgroundColor = .red
         
         // Do any additional setup after loading the view.
     }
@@ -28,7 +27,5 @@ class ExpanceViewController: UIViewController {
     @objc func back(){
         dismiss(animated: true)
     }
-
-    
 
 }

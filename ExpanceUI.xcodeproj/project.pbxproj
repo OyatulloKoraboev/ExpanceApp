@@ -36,6 +36,7 @@
 		4BA3897D2971DEF300B6AEE6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3897C2971DEF300B6AEE6 /* Menu.swift */; };
 		4BA3897F2971E6D800B6AEE6 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3897E2971E6D800B6AEE6 /* IncomeViewController.swift */; };
 		4BA389812971E6E400B6AEE6 /* ExpanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA389802971E6E400B6AEE6 /* ExpanceViewController.swift */; };
+		4BA389832971EA7800B6AEE6 /* AddExpance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA389822971EA7800B6AEE6 /* AddExpance.swift */; };
 		4BAA1A4D297049790094F412 /* Transaction Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A4C297049790094F412 /* Transaction Model.swift */; };
 		4BAA1A4F29704F540094F412 /* TransactionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A4E29704F540094F412 /* TransactionCellTableViewCell.swift */; };
 		4BAA1A5129705B2F0094F412 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A5029705B2F0094F412 /* DetailViewController.swift */; };
@@ -76,6 +77,7 @@
 		4BA3897C2971DEF300B6AEE6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		4BA3897E2971E6D800B6AEE6 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		4BA389802971E6E400B6AEE6 /* ExpanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanceViewController.swift; sourceTree = "<group>"; };
+		4BA389822971EA7800B6AEE6 /* AddExpance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpance.swift; sourceTree = "<group>"; };
 		4BAA1A4C297049790094F412 /* Transaction Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction Model.swift"; sourceTree = "<group>"; };
 		4BAA1A4E29704F540094F412 /* TransactionCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellTableViewCell.swift; sourceTree = "<group>"; };
 		4BAA1A5029705B2F0094F412 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				4BAA1A5029705B2F0094F412 /* DetailViewController.swift */,
 				4BA3897E2971E6D800B6AEE6 /* IncomeViewController.swift */,
 				4BA389802971E6E400B6AEE6 /* ExpanceViewController.swift */,
+				4BA389822971EA7800B6AEE6 /* AddExpance.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				4B71B07029699B5B00FDD036 /* IconButtonView.swift in Sources */,
 				4B0E0FD7295C783500D3BEBC /* UIColor + ext.swift in Sources */,
 				4BAA1A5129705B2F0094F412 /* DetailViewController.swift in Sources */,
+				4BA389832971EA7800B6AEE6 /* AddExpance.swift in Sources */,
 				4BAA1A4D297049790094F412 /* Transaction Model.swift in Sources */,
 				4B0E1031295CB9D000D3BEBC /* SubCardView.swift in Sources */,
 				4B0E0FD1295C636F00D3BEBC /* CardView.swift in Sources */,

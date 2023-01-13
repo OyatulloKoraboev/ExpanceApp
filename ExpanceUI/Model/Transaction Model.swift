@@ -12,7 +12,7 @@ enum TransactionType {
     case income
     case outcome
 }
-class Transaction {
+struct Transaction {
     var title:String
     var cashback:String
     var type:String

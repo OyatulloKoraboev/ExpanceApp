@@ -17,6 +17,9 @@ enum Resources{
         
         static let tv = UIImage(named: "tv") ?? UIImage()
         static let plus = UIImage(named: "plus") ?? UIImage()
+        static let arrow = UIImage(named: "arrow") ?? UIImage()
+        static let trash = UIImage(named: "trash") ?? UIImage()
+        static let share = UIImage(named: "share") ?? UIImage()
         
     }
     
@@ -33,7 +36,7 @@ enum Resources{
 
     enum fonts{
         static func interRegular(size:CGFloat) -> UIFont{
-            UIFont(name:"Inter-VariableFont_slnt,wght",size: size) ?? UIFont()
+            UIFont(name:"Inter-Regular",size: size) ?? UIFont()
         }
         
         static func interLight(size:CGFloat) -> UIFont{
@@ -43,6 +46,10 @@ enum Resources{
         static func interBold(size:CGFloat) -> UIFont{
             UIFont(name:"Inter-Bold",size: size) ?? UIFont()
         }
+        static func interSemiBold(size:CGFloat) -> UIFont{
+            UIFont(name:"Inter-SemiBold",size: size) ?? UIFont()
+        }
+        
         
        
     }

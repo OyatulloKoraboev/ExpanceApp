@@ -32,6 +32,10 @@
 		4B0E1036295DA08A00D3BEBC /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0E1035295DA08A00D3BEBC /* NavigationView.swift */; };
 		4B71B06E2969978F00FDD036 /* UIView + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B71B06D2969978F00FDD036 /* UIView + ext.swift */; };
 		4B71B07029699B5B00FDD036 /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B71B06F29699B5B00FDD036 /* IconButtonView.swift */; };
+		4BA3897B2971802F00B6AEE6 /* DetailedNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3897A2971802F00B6AEE6 /* DetailedNavigation.swift */; };
+		4BA3897D2971DEF300B6AEE6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3897C2971DEF300B6AEE6 /* Menu.swift */; };
+		4BA3897F2971E6D800B6AEE6 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3897E2971E6D800B6AEE6 /* IncomeViewController.swift */; };
+		4BA389812971E6E400B6AEE6 /* ExpanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA389802971E6E400B6AEE6 /* ExpanceViewController.swift */; };
 		4BAA1A4D297049790094F412 /* Transaction Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A4C297049790094F412 /* Transaction Model.swift */; };
 		4BAA1A4F29704F540094F412 /* TransactionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A4E29704F540094F412 /* TransactionCellTableViewCell.swift */; };
 		4BAA1A5129705B2F0094F412 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAA1A5029705B2F0094F412 /* DetailViewController.swift */; };
@@ -68,6 +72,10 @@
 		4B0E1035295DA08A00D3BEBC /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		4B71B06D2969978F00FDD036 /* UIView + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + ext.swift"; sourceTree = "<group>"; };
 		4B71B06F29699B5B00FDD036 /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
+		4BA3897A2971802F00B6AEE6 /* DetailedNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedNavigation.swift; sourceTree = "<group>"; };
+		4BA3897C2971DEF300B6AEE6 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		4BA3897E2971E6D800B6AEE6 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
+		4BA389802971E6E400B6AEE6 /* ExpanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanceViewController.swift; sourceTree = "<group>"; };
 		4BAA1A4C297049790094F412 /* Transaction Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction Model.swift"; sourceTree = "<group>"; };
 		4BAA1A4E29704F540094F412 /* TransactionCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCellTableViewCell.swift; sourceTree = "<group>"; };
 		4BAA1A5029705B2F0094F412 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +159,8 @@
 			children = (
 				4B0E0FBB295C504B00D3BEBC /* HomeViewController.swift */,
 				4BAA1A5029705B2F0094F412 /* DetailViewController.swift */,
+				4BA3897E2971E6D800B6AEE6 /* IncomeViewController.swift */,
+				4BA389802971E6E400B6AEE6 /* ExpanceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -231,6 +241,7 @@
 		4B71B07129699E7600FDD036 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
+				4BA3897A2971802F00B6AEE6 /* DetailedNavigation.swift */,
 				4B0E1035295DA08A00D3BEBC /* NavigationView.swift */,
 				4BAA1A52297067000094F412 /* DetailedView */,
 				4B0E1034295DA04900D3BEBC /* BaseView */,
@@ -244,6 +255,7 @@
 			children = (
 				4BAA1A4E29704F540094F412 /* TransactionCellTableViewCell.swift */,
 				4B71B06F29699B5B00FDD036 /* IconButtonView.swift */,
+				4BA3897C2971DEF300B6AEE6 /* Menu.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -393,8 +405,10 @@
 				4BAA1A4F29704F540094F412 /* TransactionCellTableViewCell.swift in Sources */,
 				4B0E0FBC295C504B00D3BEBC /* HomeViewController.swift in Sources */,
 				4B0E1036295DA08A00D3BEBC /* NavigationView.swift in Sources */,
+				4BA3897F2971E6D800B6AEE6 /* IncomeViewController.swift in Sources */,
 				4BAA1A542970672F0094F412 /* DetailTableViewCell.swift in Sources */,
 				4B0E0FCF295C631B00D3BEBC /* Resources.swift in Sources */,
+				4BA389812971E6E400B6AEE6 /* ExpanceViewController.swift in Sources */,
 				4B71B07029699B5B00FDD036 /* IconButtonView.swift in Sources */,
 				4B0E0FD7295C783500D3BEBC /* UIColor + ext.swift in Sources */,
 				4BAA1A5129705B2F0094F412 /* DetailViewController.swift in Sources */,
@@ -403,8 +417,10 @@
 				4B0E0FD1295C636F00D3BEBC /* CardView.swift in Sources */,
 				4B0E0FD3295C6AD600D3BEBC /* BaseView.swift in Sources */,
 				4B0E0FB8295C504B00D3BEBC /* AppDelegate.swift in Sources */,
+				4BA3897D2971DEF300B6AEE6 /* Menu.swift in Sources */,
 				4B0E0FBA295C504B00D3BEBC /* SceneDelegate.swift in Sources */,
 				4B71B06E2969978F00FDD036 /* UIView + ext.swift in Sources */,
+				4BA3897B2971802F00B6AEE6 /* DetailedNavigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

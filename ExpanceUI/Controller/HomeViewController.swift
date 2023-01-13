@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
     let transactions = [
         Transaction(title: "Cashback Offer", cashback: "+$30", type: "Entertaiment", date: "30/10/22", icon: "tv",transactionType: .income),
         Transaction(title: "Chessy Pizza", cashback: "-$30", type: "Transportation", date: "30/10/22", icon: "egg",transactionType: .outcome),
@@ -25,6 +24,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     let navigationView = NavigationView(title: "Dashboard", firstItem: Resources.images.chevron, secondItem: Resources.images.threedots, thirdItem: Resources.images.bulp)
     let myTableView = UITableView()
     let button = UIButton()
+    let chenronView = Menu(firstTitle: "Incomes", secondTitle: "Expances")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +37,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         button.layer.cornerRadius = 0.5 * button.bounds.size.width
         button.clipsToBounds = true
         button.setImage(Resources.images.plus, for: .normal)
-        button.makeSystem(button: button)
+        
         view.addSubview(button)
+        navigationView.firstItem.makeSystem(button: navigationView.firstItem)
+        navigationView.firstItem.addTarget(self, action: #selector(cheronPressed), for: .touchUpInside)
+        chenronView.firstItem.makeSystem(button: chenronView.firstItem)
+        chenronView.secondItem.makeSystem(button: chenronView.secondItem)
+        chenronView.firstItem.addTarget(self, action: #selector(goToIncome), for: .touchUpInside)
+    }
+    
+    @objc func goToIncome(){
+        let vc = IncomeViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        
+    }
+    
+    @objc func cheronPressed(){
+        if chenronView.isHidden {
+            chenronView.isHidden = false
+        } else {
+            chenronView.isHidden = true
+        }
     }
     
     private func configureTable(){
@@ -55,12 +76,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             make.bottom.equalTo(view).offset(20)
         }
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transactions.count
-        
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TransactionCellTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath) as! TransactionCellTableViewCell
         cell.backgroundColor = Resources.colors.background
@@ -75,13 +90,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let vc = DetailViewController()
-        vc.modalPresentationStyle = .fullScreen
+        
+        vc.transaction = [transactions[indexPath.row]]
         present(vc, animated: true)
         
+        //
+        
     }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return transactions.count
+    }
+    
     
     private func configure(){
         view.backgroundColor = Resources.colors.background
@@ -89,12 +111,20 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.addSubview(leftSubCard)
         view.addSubview(rightSubCard)
         view.addSubview(navigationView)
+        view.addSubview(chenronView)
         
         
         recentLabel.text = "recent transactions".capitalized
         recentLabel.font = Resources.fonts.interBold(size: 16)
         view.addSubview(recentLabel)
-        
+        chenronView.isHidden = true
+        chenronView.backgroundColor = .white
+        chenronView.snp.makeConstraints{ make in
+            make.width.equalTo(150)
+            make.height.equalTo(100)
+            make.left.equalToSuperview().offset(10)
+            make.top.equalTo(navigationView.snp.bottom).offset(2)
+        }
         navigationView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.equalToSuperview()

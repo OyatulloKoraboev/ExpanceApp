@@ -7,31 +7,63 @@
 
 import UIKit
 import SnapKit
-class DetailViewController: UIViewController {
-    var transactions:[Transaction] = []
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private let dismisButton:UIButton = {
-        let button = UIButton()
-        button.setTitle("Dismiss", for: .normal)
-        button.backgroundColor = .systemGreen
-        button.addTarget(DetailViewController.self, action: #selector(backButton), for: .touchUpInside)
-        return button
-    }()
+    
+    var transaction:[Transaction] = []
+    var titles:[String] = ["title","amount","transaction type","Tag","When","Note","Created at"]
+    let navigationBar = DetailedNavigation(title: "Details", firstItem: Resources.images.arrow, secondItem: Resources.images.share, thirdItem: Resources.images.trash)
+    
+    private let myTableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .white
+        view.addSubview(navigationBar)
+        view.addSubview(myTableView)
         
-        view.addSubview(dismisButton)
-        dismisButton.snp.makeConstraints { make in
-            make.height.equalTo(30)
-            make.width.equalTo(120)
-            make.centerY.equalToSuperview()
-            make.centerX.equalToSuperview()
-        }
+        myTableView.delegate = self
+        myTableView.dataSource = self
+        
+        myTableView.register(DetailTableViewCell.self, forCellReuseIdentifier: "cell")
+        configure()
+        navigationBar.firstItem.addTarget(self, action: #selector(back), for: .touchUpInside)
+        
     }
-    
-    @objc func backButton() {
+    @objc func back() {
         dismiss(animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:DetailTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! DetailTableViewCell
+        cell.title.text = "Hello World"
+        
+        return cell
+    }
+    
+    
+    private func configure(){
+
+        navigationBar.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(100)
+        }
+        
+        myTableView.snp.makeConstraints { make in
+            make.top.equalTo(navigationBar.snp.bottom).offset(30)
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+    }
 }
+    
+    
+

@@ -1,13 +1,14 @@
 //
-//  NavigationView.swift
+//  DetailedNavigation.swift
 //  ExpanceUI
 //
-//  Created by Oyatullo Koraboev on 29/12/22.
+//  Created by Oyatullo Koraboev on 13/01/23.
 //
 
 import UIKit
-import SnapKit
-class NavigationView: BaseView {
+
+class DetailedNavigation: BaseView {
+
     let firstItem = UIButton()
     private let secondItem = UIButton()
     private let thirdItem = UIButton()
@@ -15,7 +16,7 @@ class NavigationView: BaseView {
     private var navTitle: UILabel = {
         let label = UILabel()
 
-        label.font = Resources.fonts.interBold(size: 20)
+        label.font = Resources.fonts.interRegular(size: 20)
         return label
     }()
     
@@ -26,18 +27,15 @@ class NavigationView: BaseView {
         self.secondItem.setImage(secondItem, for: .normal)
         self.thirdItem.setImage(thirdItem, for: .normal)
         
-        
-        
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-}
 
-extension NavigationView {
+}
+extension DetailedNavigation {
     override func addViews() {
         super.addViews()
         addSubview(navTitle)
@@ -49,20 +47,20 @@ extension NavigationView {
     override func layoutViews() {
         super.layoutViews()
         navTitle.snp.makeConstraints { make in
-            make.left.equalTo(35)
+            make.centerX.equalToSuperview()
             make.bottom.equalTo(-15)
         }
         firstItem.snp.makeConstraints { make in
-            make.left.equalTo(navTitle.snp.right).offset(20)
+            make.left.equalToSuperview().offset(38)
             make.centerY.equalTo(navTitle.snp.centerY)
         }
         thirdItem.snp.makeConstraints { make in
             make.centerY.equalTo(firstItem)
-            make.right.equalTo(secondItem.snp.left).offset(-40)
+            make.right.equalTo(secondItem.snp.left).offset(-35)
         }
         secondItem.snp.makeConstraints { make in
             make.centerY.equalTo(firstItem)
-            make.right.equalToSuperview().offset(-41)
+            make.right.equalToSuperview().offset(-30)
         }
     }
     

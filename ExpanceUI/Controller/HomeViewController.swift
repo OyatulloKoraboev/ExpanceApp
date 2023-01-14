@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         Transaction(title: "Metro Railway", cashback: "-$230", type: "Transportaion", date: "30/10/22",
                     icon: "icon",transactionType: .outcome),
     ]
+    
     let cardView = CardView(title: "total balance", cost: "$23,000",titleOffsetTop: 34,costOffsetTop: 16)
     let leftSubCard = SubCardView(title: "Total income", cost: "+$23,000", titleOffsetTop: 53, costOffsetTop: 12,iconView: Resources.images.downIcon)
     let rightSubCard = SubCardView(title: "Total Expance", cost: "-$23,000", titleOffsetTop: 53, costOffsetTop: 12,iconView: Resources.images.upIcon)
@@ -70,7 +71,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    
     @objc func cheronPressed(){
         if chenronView.isHidden {
             chenronView.isHidden = false
@@ -84,7 +84,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         myTableView.delegate = self
         myTableView.dataSource = self
         myTableView.showsVerticalScrollIndicator = false
-        myTableView.backgroundColor = Resources.colors.background
+        myTableView.backgroundColor = .clear
         myTableView.separatorStyle = .none
         myTableView.register(TransactionCellTableViewCell.self, forCellReuseIdentifier: "cell")
         myTableView.snp.makeConstraints { make in
@@ -113,6 +113,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let vc = DetailViewController()
         
         vc.transaction = [transactions[indexPath.row]]
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
         
         //

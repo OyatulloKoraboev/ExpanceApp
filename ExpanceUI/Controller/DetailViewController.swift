@@ -9,9 +9,6 @@ import UIKit
 import SnapKit
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    
-    
-    
     var transaction:[Transaction] = []
     var arrayTitle = ["Title","Amount","Transaction Type","Tag"]
     let navigationBar = DetailedNavigation(title: "Details", firstItem: Resources.images.arrow, secondItem: Resources.images.share, thirdItem: Resources.images.trash)

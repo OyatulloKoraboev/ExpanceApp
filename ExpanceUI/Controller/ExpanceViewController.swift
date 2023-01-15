@@ -102,7 +102,7 @@ class ExpanceViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.typeLabel.text = transactions[indexPath.row].type
         cell.dateLabel.text = transactions[indexPath.row].date
         cell.iconView.image = transactions[indexPath.row].icon
-        
+        cell.backgroundColor = .clear
         return cell
     }
     

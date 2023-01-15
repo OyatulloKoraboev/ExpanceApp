@@ -7,15 +7,16 @@
 
 import UIKit
 import SnapKit
+let transactions = [
+    Transaction(title: "Cashback Offer", cashback: "+$30", type: "Entertaiment", date: "30/10/22", icon: "tv",transactionType: .income,data: ["Cashback Offer","+$30","Entertaiment","30/10/22"]),
+    Transaction(title: "Chessy Pizza", cashback: "-$30", type: "Transportation", date: "30/10/22", icon: "egg",transactionType: .outcome,data: ["Cashback Offer","+$30","Entertaiment","30/10/22"]),
+    Transaction(title: "Freelancing", cashback: "+$150", type: "Transportaion", date: "30/10/22", icon: "eight",transactionType: .income,data: ["Cashback Offer","+$30","Entertaiment","30/10/22"]),
+    Transaction(title: "Metro Railway", cashback: "-$230", type: "Transportaion", date: "30/10/22",
+                icon: "icon",transactionType: .outcome,data: ["Cashback Offer","+$30","Entertaiment","30/10/22"]),
+]
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let transactions = [
-        Transaction(title: "Cashback Offer", cashback: "+$30", type: "Entertaiment", date: "30/10/22", icon: "tv",transactionType: .income),
-        Transaction(title: "Chessy Pizza", cashback: "-$30", type: "Transportation", date: "30/10/22", icon: "egg",transactionType: .outcome),
-        Transaction(title: "Freelancing", cashback: "+$150", type: "Transportaion", date: "30/10/22", icon: "eight",transactionType: .income),
-        Transaction(title: "Metro Railway", cashback: "-$230", type: "Transportaion", date: "30/10/22",
-                    icon: "icon",transactionType: .outcome),
-    ]
+    
     
     let cardView = CardView(title: "total balance", cost: "$23,000",titleOffsetTop: 34,costOffsetTop: 16)
     let leftSubCard = SubCardView(title: "Total income", cost: "+$23,000", titleOffsetTop: 53, costOffsetTop: 12,iconView: Resources.images.downIcon)
@@ -108,10 +109,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let vc = DetailViewController()
-        
         vc.transaction = [transactions[indexPath.row]]
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)

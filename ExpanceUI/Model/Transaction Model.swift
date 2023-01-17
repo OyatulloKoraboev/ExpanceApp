@@ -31,3 +31,16 @@ struct Transaction {
         self.transactionType = transactionType
     }
 }
+
+struct Currency{
+    var country:String
+    var flag:String
+    var code:String
+    var check:Bool
+    init(country: String, flag: String, code: String,check:Bool = false) {
+        self.country = country
+        self.flag = flag
+        self.code = code
+        self.check = check
+    }
+}

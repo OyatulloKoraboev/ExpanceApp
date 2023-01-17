@@ -16,7 +16,7 @@ class DetailedNavigation: BaseView {
     private var navTitle: UILabel = {
         let label = UILabel()
 
-        label.font = Resources.fonts.interRegular(size: 20)
+        label.font = Resources.fonts.interSemiBold(size: 20)
         return label
     }()
     
@@ -26,6 +26,8 @@ class DetailedNavigation: BaseView {
         self.firstItem.setImage(firstItem, for: .normal)
         self.secondItem.setImage(secondItem, for: .normal)
         self.thirdItem.setImage(thirdItem, for: .normal)
+        
+        
         
     }
     

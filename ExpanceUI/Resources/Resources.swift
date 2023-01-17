@@ -21,6 +21,8 @@ enum Resources{
         static let trash = UIImage(named: "trash") ?? UIImage()
         static let share = UIImage(named: "share") ?? UIImage()
         
+        static let checkmark = UIImage(named: "checkmark") ?? UIImage()
+        
     }
     
     enum colors{
